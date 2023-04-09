@@ -1,4 +1,4 @@
-Ejercicio para practicar con Vue 3 + Vitest. Crea un boletín de notas. 
+# Ejercicio para practicar con Vue 3 + Vitest. Crea un boletín de notas. 
 
 La aplicación deberá estar testeada con Vitest. Se recomienda trabajar con un máximo de dos componentes. (Ex.: App y Students)
 
@@ -28,3 +28,11 @@ Testear si los atributos "id" son correctos
 Si el componente recibe props testear que pueda recibir datos
 Testear que el nombre del alumno aparece en la table después de haber hecho click en el botón de añadir
 Testear que el nombre de la matéria aparece en la table
+
+## Resultado:
+
+![Captura de tela 2023-04-09 204801](https://user-images.githubusercontent.com/116892294/230791332-ce04f72a-e6f6-4284-9cce-ff8d11c952db.png)
+![Captura de tela 2023-04-09 204457](https://user-images.githubusercontent.com/116892294/230791333-f2999850-d7a6-470b-bff9-49bc344432f0.png)
+
+## Autora: Caren Salles
+
