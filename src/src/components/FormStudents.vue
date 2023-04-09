@@ -10,12 +10,22 @@
 
  function AddStudent(){
 
+    // Verifica que ningum campo este vacio.
+    // arreglo los campos vacios.
+    // El método trim() elimina los espacios en blanco de ambos lados de una cadena.
+    // El método trim()método no cambia la cadena original.
+
     if (studentAdded.value.name.trim() === "" ||
     studentAdded.value.subject.trim() === "" ||
     isNaN(studentAdded.value.score)
     ) {
         return alert("Los campos deben ser completados!");
     }
+
+    //El push()método agrega nuevos elementos al final de una matriz.
+    //El push()método cambia la longitud de la matriz.
+    //El push()método devuelve la nueva longitud.
+    
     students.value.push(studentAdded.value);
     studentAdded.value = {name: "", subject:"", score:""};
 
@@ -54,14 +64,18 @@
 </script>
 
 <template>
+    <!-- // @submit.prevent El evento de enviar ya no volverá a cargar la página y solo el modificador -->
+    <!-- v-model: en Vue 3 es la posibilidad de atacar una prop de un componente a través de v-model para que cuando su valor cambie podamos capturarlo desde el componente que lo utiliza. -->
+    <!-- data-binding es la posibilidad de que cuando un input cambie desde nuestro formulario p.ej también lo haga en nuestro componente. -->
+    
     <div class="wrapper">
       <header>
         <h1>School Grades</h1>
       </header>
-      <form class="wrapper__form">
-        <input type="text" placeholder="Name"/>
-        <input type="text" placeholder="Subject"/>
-        <input type="number" placeholder="Score"/>
+      <form @submit.prevent="AddStudent" class="wrapper__form">
+        <input type="text" placeholder="Name" v-model="studentAdded.name"/>
+        <input type="text" placeholder="Subject" v-model="studentAdded.subject"/>
+        <input type="number" placeholder="Score" v-model="studentAdded.score"/>
         <button type="submit">Add+</button>
       </form>
       <table class="wrapper__table">
@@ -73,10 +87,10 @@
             </tr>
         </thead>
         <tbody class="wrapper__table__show">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr v-for="student in students" :key="student.id">
+                <td>{{ student.name }}</td>
+                <td>{{ student.subject }}</td>
+                <td>{{ baremoScore(student.score) }}</td>
             </tr>
         </tbody>
       </table>
