@@ -19,7 +19,37 @@
     students.value.push(studentAdded.value);
     studentAdded.value = {name: "", subject:"", score:""};
 
-    
+ }
+
+ function baremoScore(score) {
+    if (score >= 0 && score < 3) {
+        return "Muy deficiente";
+    }
+
+    if (score >= 3 && score < 5) {
+        return "Insuficiente";
+    }
+
+    if (score >= 5 && score < 6) {
+        return "Suficiente";
+    }
+
+    if (score >= 6 && score < 7) {
+        return "Bien";
+    }
+
+    if (score >= 7 && score < 9) {
+        return "Notable";  
+    }
+
+    if (score >= 9 && score <= 10) {
+        return "Sobresaliente";  
+    }
+     
+    if (score > 10) {
+        return alert ("Nota erronea!")
+        
+    }
  }
 </script>
 
