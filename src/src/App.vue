@@ -6,6 +6,6 @@ import FormStudents from './components/FormStudents.vue';
   <FormStudents />
 </template>
 
-<style scoped>
+<style lang="scss">
 
 </style>
